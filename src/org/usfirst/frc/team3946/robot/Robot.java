@@ -4,6 +4,7 @@ import org.usfirst.frc.team3946.robot.commands.*;
 import org.usfirst.frc.team3946.robot.commands.misc.*;
 import org.usfirst.frc.team3946.robot.subsystems.*;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -38,10 +39,12 @@ public class Robot extends IterativeRobot {
 	public static Camera camera;
 	public static OI oi;
 	
+	public static Pneumatics pneumatics = new Pneumatics();
     private final SendableChooser autonomousChooser = new SendableChooser();
     private final SendableChooser ledChooser = new SendableChooser();
     private final SendableChooser vlChooser = new SendableChooser();
-      
+	Compressor c = new Compressor();
+
      //* This function is run when the robot is first started up and should be
      //* used for any initialization code.
      //*
@@ -53,7 +56,7 @@ public class Robot extends IterativeRobot {
     	toteContact = new ToteContactSensor();
     	lights = new FunLights();
     	vl = new VisionLights();
-    	
+    	c.start();
     	camera = new Camera();
     	new Thread(camera).start();
 

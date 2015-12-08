@@ -3,6 +3,7 @@ package org.usfirst.frc.team3946.robot;
 import libraries.XboxController;
 
 import org.usfirst.frc.team3946.robot.commands.DriveToCrate;
+import org.usfirst.frc.team3946.robot.commands.BoxPiston;
 import org.usfirst.frc.team3946.robot.commands.drive.*;
 import org.usfirst.frc.team3946.robot.commands.lift.*;
 
@@ -40,6 +41,8 @@ public class OI {
 		// Autonomous Buttons
 	    Button driveToCrate = new JoystickButton(driveController, XboxController.A);
 	    	driveToCrate.whileHeld(new DriveToCrate());
+	    Button solenoid = new JoystickButton(driveController, XboxController.X);
+	    	solenoid.whileHeld(new BoxPiston());
 //	    Button alignToStack = new JoystickButton(driveController, XboxController.Y);
 //	    	alignToStack.whenPressed(new AlignToStack());
 			
