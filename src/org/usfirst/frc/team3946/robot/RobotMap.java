@@ -20,7 +20,7 @@ public interface RobotMap {
 	int spare2 = 3;						//T3
 	int pickUpMotor = 6;				//
 	// Relays
-	int spike1 = 1;					//SPK1
+	int spike1 = 1;					//SPK1 conveyor
 	int spike2 = 2;					//SPK2 +blue -common
 	int spike3 = 3;					//SPK3 +red -green
 	

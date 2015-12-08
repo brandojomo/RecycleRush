@@ -4,6 +4,7 @@ import libraries.XboxController;
 
 import org.usfirst.frc.team3946.robot.commands.DriveToCrate;
 import org.usfirst.frc.team3946.robot.commands.TogglePickupMotors;
+import org.usfirst.frc.team3946.robot.commands.ToggleBelt;
 import org.usfirst.frc.team3946.robot.commands.drive.*;
 import org.usfirst.frc.team3946.robot.commands.lift.*;
 
@@ -35,18 +36,18 @@ public class OI {
 			lowerLift.whileActive(new ElevateWithTriggers());                      
 			raiseLift.whileActive(new ElevateWithTriggers());
 			switchOverride.whenPressed(new SwitchOverride());
-		
-		// Wing Control Buttons
 			
 		// Autonomous Buttons
 	    Button driveToCrate = new JoystickButton(driveController, XboxController.A);
 	    	driveToCrate.whileHeld(new DriveToCrate());
-//	    Button alignToStack = new JoystickButton(driveController, XboxController.Y);
-//	    	alignToStack.whenPressed(new AlignToStack());
 			
         // SmartDashboard Buttons			
         SmartDashboard.putData("Enable Slide", new SlideDrivingCommand());
         SmartDashboard.putData("Enable Arcade", new ArcadeDrivingCommand());
+        
+        // BallPickup Buttons
+	    Button toggleBelt = new JoystickButton(driveController, XboxController.Y);
+    	toggleBelt.whenPressed(new ToggleBelt());
         //PickUpMotor Button
         Button toggleMotors = new JoystickButton(driveController, XboxController.B);
         toggleMotors.whenPressed(new TogglePickupMotors());

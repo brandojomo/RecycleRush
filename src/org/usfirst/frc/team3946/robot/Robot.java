@@ -37,6 +37,7 @@ public class Robot extends IterativeRobot {
 	public static VisionLights vl;
 	public static Camera camera;
 	public static OI oi;
+	public static ConveyorBelt conveyorbelt;
 	public static PickupMotors pickupMotors;
 	
     private final SendableChooser autonomousChooser = new SendableChooser();
