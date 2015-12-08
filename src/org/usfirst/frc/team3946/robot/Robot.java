@@ -37,6 +37,7 @@ public class Robot extends IterativeRobot {
 	public static VisionLights vl;
 	public static Camera camera;
 	public static OI oi;
+	public static PickupMotors pickupMotors;
 	
     private final SendableChooser autonomousChooser = new SendableChooser();
     private final SendableChooser ledChooser = new SendableChooser();
@@ -53,6 +54,7 @@ public class Robot extends IterativeRobot {
     	toteContact = new ToteContactSensor();
     	lights = new FunLights();
     	vl = new VisionLights();
+    	pickupMotors = new PickupMotors();
     	
     	camera = new Camera();
     	new Thread(camera).start();

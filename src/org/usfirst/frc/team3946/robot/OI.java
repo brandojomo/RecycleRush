@@ -3,6 +3,7 @@ package org.usfirst.frc.team3946.robot;
 import libraries.XboxController;
 
 import org.usfirst.frc.team3946.robot.commands.DriveToCrate;
+import org.usfirst.frc.team3946.robot.commands.TogglePickupMotors;
 import org.usfirst.frc.team3946.robot.commands.drive.*;
 import org.usfirst.frc.team3946.robot.commands.lift.*;
 
@@ -46,6 +47,9 @@ public class OI {
         // SmartDashboard Buttons			
         SmartDashboard.putData("Enable Slide", new SlideDrivingCommand());
         SmartDashboard.putData("Enable Arcade", new ArcadeDrivingCommand());
+        //PickUpMotor Button
+        Button toggleMotors = new JoystickButton(driveController, XboxController.B);
+        toggleMotors.whenPressed(new TogglePickupMotors());
     }
     
     public XboxController getDriveController() {
