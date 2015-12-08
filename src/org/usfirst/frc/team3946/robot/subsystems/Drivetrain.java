@@ -16,7 +16,7 @@ public class Drivetrain extends Subsystem {
     
     public Talon left = new Talon(RobotMap.driveLeftTalon);
     public Talon right = new Talon(RobotMap.driveRightTalon);
-    public Talon strafe = new Talon(RobotMap.driveStrafeTalon);
+   public Talon strafe = new Talon(RobotMap.driveStrafeTalon);
     public BetterGyro gyro = new BetterGyro(RobotMap.driveGyro);
     public Encoder leftEncoder = RobotMap.leftEncoder;
     public Encoder rightEncoder = RobotMap.rightEncoder;
@@ -25,13 +25,13 @@ public class Drivetrain extends Subsystem {
     private final MotorController rightWheel = new MotorController(right);
     private final MotorController strafeWheel = new MotorController(strafe);
     private final ThreeMotorController driveController = new ThreeMotorController(
-            leftWheel, 
-            rightWheel, 
-            strafeWheel
+        leftWheel, 
+         rightWheel, 
+    	strafeWheel
     );
 
-    private final SlideDrive slideDrive = new SlideDrive(driveController, leftEncoder, rightEncoder);
-    private final ArcadeDrive arcadeDrive = new ArcadeDrive(driveController);
+  private final SlideDrive slideDrive = new SlideDrive(driveController, leftEncoder, rightEncoder);
+  private final ArcadeDrive arcadeDrive = new ArcadeDrive(driveController);
 
 	public Drivetrain() {
         rightWheel.setInverted(true);
@@ -82,13 +82,13 @@ public class Drivetrain extends Subsystem {
     
     public void strafe(double speed) {
     	double strafeSpeed = speed;
-    	strafe.set(strafeSpeed);
+    //	strafe.set(strafeSpeed);
     }
     
     public void setMotor(double leftSpeed, double rightSpeed, double strafeSpeed){
     	left.set(leftSpeed);
     	right.set(rightSpeed);
-    	strafe.set(strafeSpeed);
+    //	strafe.set(strafeSpeed);
     }
     
     public BetterGyro getGyro() {

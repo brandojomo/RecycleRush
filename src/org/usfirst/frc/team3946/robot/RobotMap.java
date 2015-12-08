@@ -14,13 +14,13 @@ public interface RobotMap {
 	// Speed Controllers
 	int driveLeftTalon = 1;				//T1
 	int driveRightTalon = 2;			//T2
-	int driveStrafeTalon = 6;			//T6
+	int driveStrafeTalon = 0;			//T6 * for use of pickUpMotor
 	int liftTalon = 4;					//T4
 	int spare1 = 5;						//T5
 	int spare2 = 3;						//T3
-	
+	int pickUpMotor = 6;				//
 	// Relays
-	int spike1 = 1;					//SPK1
+	int spike1 = 1;					//SPK1 conveyor
 	int spike2 = 2;					//SPK2 +blue -common
 	int spike3 = 3;					//SPK3 +red -green
 	

@@ -38,6 +38,8 @@ public class Robot extends IterativeRobot {
 	public static VisionLights vl;
 	public static Camera camera;
 	public static OI oi;
+	public static ConveyorBelt conveyorbelt;
+	public static PickupMotors pickupMotors;
 	
 	public static Pneumatics pneumatics = new Pneumatics();
     private final SendableChooser autonomousChooser = new SendableChooser();
@@ -57,6 +59,8 @@ public class Robot extends IterativeRobot {
     	lights = new FunLights();
     	vl = new VisionLights();
     	c.start();
+    	pickupMotors = new PickupMotors();
+    	
     	camera = new Camera();
     	new Thread(camera).start();
 
